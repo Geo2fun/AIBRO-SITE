@@ -7,196 +7,191 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    body {
+    :root {
+      --main-color: #00ffe0;
+      --bg-dark: #0a0a0a;
+      --bg-glass: rgba(255, 255, 255, 0.05);
+      --border-glow: rgba(0, 255, 224, 0.2);
+    }
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(120deg, #0d0d0d 0%, #111111 100%);
-      color: #ffffff;
-      text-align: center;
+      background: var(--bg-dark);
+      color: white;
       overflow-x: hidden;
+      line-height: 1.6;
     }
-
     header {
-      padding: 4rem 1rem 2rem;
-      background: radial-gradient(circle at top, #1a1a1a, #0d0d0d);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at top, #121212, #000);
+      text-align: center;
+      padding: 2rem;
     }
-
     header img {
-      width: 160px;
+      width: 150px;
       border-radius: 50%;
       margin-bottom: 1rem;
-      box-shadow: 0 0 20px #00ffe0;
+      box-shadow: 0 0 25px var(--main-color);
     }
-
     header h1 {
-      font-size: 3.5rem;
-      color: #00ffe0;
-      margin: 0.5rem 0;
-      text-shadow: 0 0 10px #00ffe0;
+      font-size: 4rem;
+      background: linear-gradient(to right, #00ffe0, #00aaff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
     }
-
     header p {
-      font-size: 1.2rem;
       color: #ccc;
-      margin: 1rem auto;
       max-width: 600px;
+      margin-bottom: 2rem;
     }
-
     .btns a {
-      display: inline-block;
-      margin: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      background: rgba(0, 255, 224, 0.1);
-      border: 1px solid #00ffe0;
-      color: #00ffe0;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 12px;
-      transition: all 0.2s;
-    }
-
-    .btns a:hover {
-      background-color: #00ffe0;
+      background: var(--main-color);
       color: #000;
-      transform: scale(1.05);
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      margin: 0.5rem;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.3s;
     }
-
+    .btns a:hover {
+      background: white;
+    }
     section {
-      padding: 3rem 1rem;
-      max-width: 900px;
+      padding: 4rem 1rem;
+      max-width: 1000px;
       margin: auto;
+      text-align: center;
     }
-
-    .tokenomics {
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      color: var(--main-color);
+    }
+    .tokenomics, .team {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1.2rem;
-      margin-top: 1rem;
+      gap: 1.5rem;
     }
-
-    .tokenomics div {
-      background: rgba(255,255,255,0.03);
-      padding: 1.2rem;
-      border-radius: 16px;
-      border: 1px solid #00ffe033;
-      box-shadow: 0 0 10px #00ffe015;
+    .tokenomics div, .team div {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glow);
+      padding: 1rem;
+      border-radius: 14px;
+      backdrop-filter: blur(10px);
     }
-
-    footer {
-      margin-top: 4rem;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #888;
+    .team img {
+      width: 70px;
+      border-radius: 50%;
+      margin-bottom: 0.5rem;
     }
-
     .roadmap ul {
       list-style: none;
       padding: 0;
     }
-
     .roadmap li {
       background: #111;
-      margin: 0.5rem auto;
-      padding: 0.75rem;
-      border-radius: 10px;
-      border: 1px dashed #444;
-      max-width: 600px;
-    }
-
-    .team {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .team div {
-      background: #1b1b1b;
       padding: 1rem;
+      margin: 0.5rem auto;
+      max-width: 600px;
+      border-left: 5px solid var(--main-color);
+      border-radius: 8px;
+    }
+    .logos {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      justify-content: center;
+      align-items: center;
+    }
+    .logos img {
+      width: 100px;
       border-radius: 12px;
-      border: 1px solid #00ffe010;
-      transition: transform 0.3s;
+      box-shadow: 0 0 15px var(--main-color);
     }
-
-    .team div:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 10px #00ffe033;
+    footer {
+      padding: 2rem 1rem;
+      text-align: center;
+      color: #777;
+      font-size: 0.9rem;
     }
-
-    .team img {
-      width: 80px;
-      border-radius: 50%;
-      margin-bottom: 0.5rem;
-    }
-
-    a { color: #00ffe0; }
   </style>
 </head>
 <body>
-  <header data-aos="zoom-in">
-    <img src="./aibro_logo.png" alt="$AIBRO Logo" />
+  <header>
+    <img src="./aibro_logo.png" alt="$AIBRO logo" />
     <h1>$AIBRO</h1>
-    <p>Your meme AI overlord. Born from chaos, trained by data, deployed to the blockchain. No roadmap. Just vibes and code.</p>
+    <p>Deploying chaos... Initializing memes... Your AI-powered meme overlord is online.</p>
     <div class="btns">
       <a href="https://four.meme/token/0xf5d6245a4e6b8f52f6eff5b7535b968785364444">Buy on Fourmeme</a>
       <a href="https://bscscan.com/token/0xf5d6245a4e6b8f52f6eff5b7535b968785364444">View on BscScan</a>
     </div>
   </header>
 
-  <section data-aos="fade-up">
+  <section>
     <h2>About</h2>
-    <p>$AIBRO isn't just a meme — it's your decentralized digital bro, vibing across the blockchain with synthetic intelligence and a bad attitude.</p>
+    <p>$AIBRO isn't just another token — it's the AI meme brotherhood built to confuse influencers, destabilize trends, and maximize meme velocity. No roadmap. Just power.</p>
+    <div class="logos">
+      <div>
+        <img src="./aibro_logo.png" alt="Original Logo" title="Original Logo" />
+      </div>
+      <div>
+        <img src="./aibro_logo1.png" alt="Alt Pixel Logo" title="AI Logo Style" />
+      </div>
+    </div>
   </section>
 
-  <section data-aos="fade-up">
+  <section>
     <h2>Tokenomics</h2>
     <div class="tokenomics">
       <div><strong>50%</strong><br/>Liquidity</div>
       <div><strong>15%</strong><br/>Community</div>
       <div><strong>10%</strong><br/>Marketing</div>
-      <div><strong>10%</strong><br/>Team (vested)</div>
-      <div><strong>10%</strong><br/>Ecosystem Fund</div>
-      <div><strong>5%</strong><br/>Burn</div>
+      <div><strong>10%</strong><br/>Team (12mo vesting)</div>
+      <div><strong>10%</strong><br/>Ecosystem</div>
+      <div><strong>5%</strong><br/>Burned</div>
     </div>
   </section>
 
-  <section class="roadmap" data-aos="fade-up">
+  <section class="roadmap">
     <h2>Roadmap</h2>
     <ul>
-      <li>✅ Phase 1: Deploy a meme</li>
-      <li>✅ Phase 2: Confuse AI</li>
-      <li>🚧 Phase 3: Trend on Twitter</li>
-      <li>🚀 Phase 4: Replace all influencers with bots</li>
-      <li>🧠 Phase 5: Merge with AGI</li>
+      <li>Phase 1: Summon the meme AI (deployed)</li>
+      <li>Phase 2: Liquidity injection + stealth drop</li>
+      <li>Phase 3: Break Twitter, invade TikTok</li>
+      <li>Phase 4: Meme singularity achieved</li>
     </ul>
   </section>
 
-  <section data-aos="fade-up">
+  <section>
     <h2>Team</h2>
     <div class="team">
       <div>
         <img src="https://robohash.org/brogpt" alt="BroGPT" />
-        <strong>BroGPT</strong><br/>
-        Strategy
+        <strong>BroGPT</strong><br/>Strategy
       </div>
       <div>
-        <img src="https://robohash.org/chadbot" alt="Chadbot" />
-        <strong>ChadBot</strong><br/>
-        Hype Ops
+        <img src="https://robohash.org/chadbot" alt="ChadBot" />
+        <strong>ChadBot</strong><br/>Community Ops
       </div>
       <div>
-        <img src="https://robohash.org/memegineer" alt="MemeBot" />
-        <strong>Memegineer</strong><br/>
-        Smart Contracts
+        <img src="https://robohash.org/memegineer" alt="Memegineer" />
+        <strong>Memegineer</strong><br/>Smart Contracts
       </div>
     </div>
   </section>
 
-  <footer data-aos="fade-up">
-    Built by AIBRO in collaboration with synthetic chaos. Not financial advice. Not even real advice. Just code and memes. 🧠💥
+  <footer>
+    © 2025 $AIBRO. Made with ☕ & chaos. Not financial advice. Powered by the internet.
   </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
 </body>
 </html>
